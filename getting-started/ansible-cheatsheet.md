@@ -16,7 +16,7 @@
 
 ssh-keygen -t ed25519 -C 'ansible default'
 
-![image-20230124050634187](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\1.png)
+![image-20230124050634187](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/1.png?raw=true)
 
 Remember to not put any passphrase for it. I would also recommend putting it into a different file (so that its only for ansible to use) as shown in the image above.
 
@@ -24,7 +24,7 @@ now you should copy the ssh key created to the said server:
 
 `ssh-copy-id -i ~/.ssh/ansible.pub 10.24.34.57`
 
-![image-20230124051643716](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\2.png)
+![image-20230124051643716](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/2.png?raw=true)
 
 
 
@@ -102,7 +102,7 @@ ansible-playbook  create_users.yml  --syntax-check
 
 ## AD HOC vs playbook: 
 
-![51](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\51.png)
+![51](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/51.png?raw=true)
 
 
 
@@ -371,35 +371,35 @@ we will  create a copy of this file and save it with the same name (*sshd_config
 
 first we check that AllowUsers doesn't already exist in the file:
 
-![image-20230130150529736](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\42.png)
+![image-20230130150529736](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/42.png?raw=true)
 
 and then we add it to the sshd_config_ubuntu.j2 and sshd_config_centos.j2 file:
 
-![image-20230130150529736](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\43.png)
+![image-20230130150529736](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/43.png?raw=true)
 
 and now will set the value of this variable:
 
-![image-20230130151011973](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\44.png)
+![image-20230130151011973](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/44.png?raw=true)
 
-![image-20230130151118227](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\45.png)
+![image-20230130151118227](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/45.png?raw=true)
 
 we will now add it to our host vars for each of the servers
 
-![image-20230130151118227](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\46.png)
+![image-20230130151118227](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/46.png?raw=true)
 
 and now add a base task(for every server) to add this file to their respective ssh config path file:
 
-![image-20230130152314037](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\47.png)
+![image-20230130152314037](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/47.png?raw=true)
 
 and since this notified a handler we should create one for it:
 
-![image-20230130152353616](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\48.png)
+![image-20230130152353616](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/48.png?raw=true)
 
 
 
-![image-20230130152439328](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\49.png)
+![image-20230130152439328](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/49.png?raw=true)
 
-![image-20230130152528658](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\50.png)
+![image-20230130152528658](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/50.png?raw=true)
 
 after running this, the /etc/ssh/sshd_config file for each server should have an extra line (which is the AllowUsers one)
 
