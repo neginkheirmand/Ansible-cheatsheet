@@ -118,21 +118,21 @@ use "when" and the variables from **gather_facts** command to conditionally spec
 
 it should look something like this:
 
-![image-20230128144305205](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\3.png)
+![image-20230128144305205](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/3.png?raw=true)
 
  for example for the ansible_distribution variable:
 
-![image-20230128144406326](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\4)
+![image-20230128144406326](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/4.png?raw=true)
 
 and use it in a play like this:
 
-![image-20230128144451878](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\5.png)
+![image-20230128144451878](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/5.png?raw=true)
 
  #### self-defined variables:
 
-![image-20230128151606816](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\6.png)
+![image-20230128151606816](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/6.png?raw=true)
 
-![image-20230128151752587](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\7.png)
+![image-20230128151752587](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/7.png?raw=true)
 
 
 
@@ -144,13 +144,13 @@ general: like always (will run no matter what tag we targeted)
 
 self-defined: like ubuntu in this next example
 
-![image-20230128172305176](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\8.png)
+![image-20230128172305176](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/8.png?raw=true)
 
 and to list all the tags from a playbook:
 
 ` ansible-playbook --list-tags install_latest_tree_package.yaml`
 
-![image-20230128172525586](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\9.png)
+![image-20230128172525586](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/9.png?raw=true)
 
 to run while targeting a specific tag :
 
@@ -166,13 +166,13 @@ to run while targeting many tag :
 
 
 
-![image-20230129132050766](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\10.png)
+![image-20230129132050766](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/10.png?raw=true)
 
 
 
-![image-20230129131023769](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\11.png)
+![image-20230129131023769](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/11.png?raw=true)
 
-![image-20230129131049641](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\12.png)
+![image-20230129131049641](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/12.png?raw=true)
 
 
 
@@ -180,7 +180,7 @@ more on changing UFW rules and status [**here**](https://docs.ansible.com/ansibl
 
 ### installing applications using unzip:
 
-![image-20230129133821356](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\13.png)
+![image-20230129133821356](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/13.png?raw=true)
 
 
 
@@ -192,7 +192,7 @@ above we have an example of installation of apache, as you will later see, this 
 
 version1:
 
-![image-20230129135955709](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\14.png)
+![image-20230129135955709](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/14.png?raw=true)
 
 just to install and start the httpd (apache for centos) after running the playbook
 
@@ -200,25 +200,25 @@ just to install and start the httpd (apache for centos) after running the playbo
 
 #### enabling service(start running after reboot)
 
-![image-20230129135955709](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\15.png)
+![image-20230129135955709](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/15.png?raw=true)
 
 and this is a very simple thing to fix, we just need to add one line:
 
-![image-20230129144359411](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\16.png)
+![image-20230129144359411](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/16.png?raw=true)
 
  and after running the playbook with this new line, the service should look likes this:
 
-![image-20230129144359411](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\17.png)
+![image-20230129144359411](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/17.png?raw=true)
 
 #### restarting a service
 
 for example we change this line from the "/etc/httpd/conf/httpd.conf" file and after it we should restart the httpd (apache for centos) package, so the change is applied:
 
-![image-20230129144359411](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\18.png)
+![image-20230129144359411](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/18.png?raw=true)
 
 we need to know exactly what line we will be changing:
 
-![image-20230129144359411](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\19.png)
+![image-20230129144359411](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/19.png?raw=true)
 
 #####  **WARNING: lineinfile package**
 
@@ -234,13 +234,13 @@ we need to know exactly what line we will be changing:
 
 
 
-![image-20230129144359411](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\20.png)
+![image-20230129144359411](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/20.png?raw=true)
 
 before and after running this playbook:
 
 
 
-![image-20230129155508819](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\21.png)
+![image-20230129155508819](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/21.png?raw=true)
 
 
 
@@ -252,33 +252,33 @@ see a list of users with this command: 	`cat /etc/passwd`
 
 as of right now the latest added users are:
 
-![image-20230129170932955](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\22.png)
+![image-20230129170932955](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/2.png?raw=true)
 
 run the playbook to add users :
 
-![image-20230129171146097](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\24.png)
+![image-20230129171146097](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/24.png?raw=true)
 
 and this should be the output of `cat /etc/passwd` after running the playbook:
 
-![image-20230129171115472](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\23.png)
+![image-20230129171115472](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/23.png?raw=true)
 
 #### add sshkey for said user:
 
-![image-20230129171428118](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\25.png)
+![image-20230129171428118](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/25.png?raw=true)
 
-![image-20230129171810575](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\26.png)
+![image-20230129171810575](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/26.png?raw=true)
 
 #### add sudoers file for said user
 
-![image-20230129172654747](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\27.png)
+![image-20230129172654747](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/27.png?raw=true)
 
 to test it:
 
-![image-20230129172833553](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\28.png)
+![image-20230129172833553](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/28.png?raw=true)
 
 and should be known as simone and be able to use sudo:
 
-![image-20230129172950638](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\29.png) 
+![image-20230129172950638](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/29.png?raw=true) 
 
 
 
@@ -288,21 +288,21 @@ Roles allow us to better split up our tasks.
 
 you should define the roles in the playbook.yml and then create a **"roles"** folder in the same path as the playbook, inside of the roles folder there should be folder for each of the roles defined in the playbook, named with their respective role_names.
 
-![image-20230130125029635](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\30.png) 
+![image-20230130125029635](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/30.png?raw=true) 
 
 each role_folder should have a tasks folder inside:
 
-![image-20230130125337800](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\31.png)
+![image-20230130125337800](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/31.png?raw=true)
 
 
 
 and inside the tasks directory corresponding to each role there should be a main.yml that is called a taskbook instead of a playbook, because it should start with tasks instead of host specifications and  ...
 
-![image-20230130133741890](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\32.png)
+![image-20230130133741890](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/32.png?raw=true)
 
 * remember if you are coping files and you need the **"files"** directory you should also copy the files directory into the said role_folder
 
-![image-20230130134302367](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\33.png)
+![image-20230130134302367](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/33.png?raw=true)
 
 
 
@@ -312,7 +312,9 @@ to create varibles for each of our hosts, we can create a hosts_vars directory a
 
 we did this with the webservers:
 
-![image-20230130140908417](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\34.png)![image-20230130140952764](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\35.png)
+![image-20230130140908417](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/34.png?raw=true)
+
+![image-20230130140952764](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/35.png?raw=true)
 
 
 
@@ -322,7 +324,7 @@ we did this with the webservers:
 
 do you remember when we did this:
 
-![image-20230130140952764](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\36.png)
+![image-20230130140952764](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/36.png?raw=true)
 
 we used variable named **apache** to register when a changed happened in the state, but as mentioned before this is not very clever, because you can possibly only use that variable in one time: 
 
@@ -339,21 +341,17 @@ but there is an easier way to handle this scenario without using variables:
 
 we will completely remove the restart task and the variables like this:
 
-![image-20230130141549553](C:\Users\venus\AppData\Roaming\Typora\typora-user-images\image-20230130141549553.png)
+![image-20230130141549553](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/52.png?raw=true)
 
 
 
-we will now create a folder in the said directory where this taskbook existed and call it handlers, with a main.yml file inside of it :
+we will now create a folder in the said directory where this taskbook existed and call it handlers, with a main.yml file inside of it and inside of it the task that should run with the name of the notification should exists:
 
-![image-20230130141802102](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\38.png) 
-
-and inside of it the task that should run with the name of the notification should exists:
-
-![image-20230130142137922](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\38.png) 
+![image-20230130142137922](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/38.png?raw=true) 
 
 and the main taskbook should look like this:
 
-![image-20230130142137922](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\39.png)
+![image-20230130142137922](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/39.png?raw=true)
 
 
 
@@ -363,9 +361,9 @@ and the main taskbook should look like this:
 
 we will  create a copy of this file and save it with the same name (*sshd_config*) but with a j2 file extension(jinja2)
 
-![image-20230130150209748](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\40.png)
+![image-20230130150209748](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/40.png?raw=true)
 
-![image-20230130150334180](C:\Users\venus\Desktop\work-shenasa\infra\ansible\getting-started\doc\41.png)
+![image-20230130150334180](https://github.com/neginkheirmand/Ansible-GettingStarted/blob/master/getting-started/doc/41.png?raw=true)
 
 
 
