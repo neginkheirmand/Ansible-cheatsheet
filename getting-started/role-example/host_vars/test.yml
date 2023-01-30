@@ -1,0 +1,5 @@
+apache_package: apache2
+php_package: libapache2-mod-php
+apache_service: apache2
+ssh_users: "simone user kheirmand"
+ssh_template_file: sshd_config_ubuntu.j2

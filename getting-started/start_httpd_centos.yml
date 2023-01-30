@@ -1,0 +1,29 @@
+# this play is for cent os servers, in CentOS after the installation of apache package the service will not start automatically
+# so we will need to add a play in this playbook to start it  
+#the apache package(+ php package) for CentOS  is named differntly that the one meant for ubuntu(which is apache2 and libapache2-mod-php)
+# the CentOS version is called httpd and php
+---
+- hosts: all
+  become: true
+  vars:
+    apache_package: http
+    php_package: php
+  pre_tasks: 
+    - name: install apache and php on CentOS
+      package:
+        name:
+          - "{{apache_package}}"
+          - "{{php_package}}"
+        state: latest
+        update_cache: yes 
+  tasks:
+    - name: start the httpd service (CentOS)
+      tags: centos,httpd
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+      when:  ansible_distribution == "CentOS"
+
+#apt for ubuntu and dnf for centos so we will use package and let ubuntu decide what the default package is 
+#check the inventory file to know what the variables(apache_package and php_package) are 

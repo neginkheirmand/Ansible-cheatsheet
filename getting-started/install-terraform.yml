@@ -1,0 +1,21 @@
+# this is an older version of terraform, if you actually want to install terraform in your server, i would definitly recommend you visit the documentation page
+# this is an example for learning porpuses
+---
+- hosts: all
+  become: true
+  pre_tasks: 
+    - name: install unzip
+      apt:
+        name:
+          - unzip
+        state: latest
+        update_cache: yes 
+  tasks:
+    - name: install terraform using the zip file(link found from its documentation)
+      unarchive: 
+        src: https://releases.harshicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip
+        des: /usr/local/bin
+        remote_src: true
+        mode: 0755
+        owner: root 
+        group: root

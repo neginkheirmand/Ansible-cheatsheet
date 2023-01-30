@@ -1,0 +1,13 @@
+
+[workstations]
+10.24.34.57
+
+[web_servers]
+10.24.34.58
+
+[db_servers]
+10.24.34.59
+
+[file_servers]
+10.24.34.60
+

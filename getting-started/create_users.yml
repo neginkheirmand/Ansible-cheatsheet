@@ -1,0 +1,29 @@
+---
+- hosts: all
+  become: true
+  pre_tasks: 
+    - name: update repository index
+      tags: always
+      apt:
+        update_cache: yes   # basically runs apt update before installing something, just to make sure you have the latest version number 
+      when: ansible_distribution == "Ubuntu"
+      changed_when: false #does'nt register this play as a change 
+  tasks:
+    - name: create a user called simone
+      tags: always
+      user:
+        name: simone
+        groups: root
+    - name: add sshkey for simone
+      tags: always
+      authorized_key:
+        user: simone
+        key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMcaSpfvRUzkX+y131FEqiI+2YARjRXeXoimAwWgU68R ansible default"
+    - name: add sudoers file for said user
+      tags: always
+      copy: 
+        src: sudoer_simone #should create this file in the files directory
+        dest: /etc/sudoers.d/simone
+        owner: root
+        group: root
+        mode: 0440

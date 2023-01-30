@@ -1,0 +1,10 @@
+- hosts: all
+  become: true
+  tasks: 
+    - name: install zip and unzip
+      apt:
+        name:
+          - zip
+          - unzip
+        state: latest
+        update_cache: yes 

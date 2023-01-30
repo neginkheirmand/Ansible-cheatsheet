@@ -1,0 +1,36 @@
+---
+- hosts: all
+  become: true
+  pre_tasks: 
+    - name: update repository index
+      tags: always
+      apt:
+        update_cache: yes   # basically runs apt update before installing something, just to make sure you have the latest version number 
+      when: ansible_distribution == "Ubuntu"  # check the distro using cat /etc/os-release in the client system (capital letters matter) 
+    
+    - name: Allow all access to tcp port 80  #enabling and updating ufw rules and status 
+      community.general.ufw:
+        rule: allow
+        port: '80'
+        proto: tcp
+        state: enabled
+
+  tasks:
+    - name: installing apache and php for ubuntu servers
+      tags: ubuntu,apache,apache2
+      apt: 
+        name: 
+          - apache2
+          - libapache2-mod-php
+        state: latest
+      when: ansible_distribution in [ "Ubuntu", "Debian" ] # could be one of these many distros  
+    
+    - name: copy html file to the server
+      tags: apache,apache2,httpd
+      copy:
+        src: file.html  # it is assumed that this file exist in a "files" directory
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: 0644
+

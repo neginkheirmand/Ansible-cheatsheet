@@ -1,0 +1,12 @@
+---
+- hosts: all
+  vars:
+    students:
+      - Alice
+      - Mark
+      - Peter
+
+  tasks:
+  - name: Ansible Array Usage Example
+    debug:
+      msg: "{{ students }}"

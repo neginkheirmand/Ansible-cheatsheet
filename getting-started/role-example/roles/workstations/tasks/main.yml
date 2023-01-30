@@ -1,0 +1,15 @@
+- name: install unzip
+  apt:
+    name:
+      - unzip
+    state: latest
+    update_cache: yes 
+    
+- name: install terraform using the zip file(link found from its documentation)
+  unarchive: 
+    src: https://releases.harshicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip
+    des: /usr/local/bin
+    remote_src: true
+    mode: 0755
+    owner: root 
+    group: root

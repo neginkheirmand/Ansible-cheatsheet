@@ -1,0 +1,16 @@
+- hosts: all
+  become: true
+  vars:
+    apache_package: apache2
+    php_package: libapache2-mod-php
+  tasks: 
+    - name: install apache and php
+      package:
+        name:
+          - "{{apache_package}}"
+          - "{{php_package}}"
+        state: latest
+        update_cache: yes 
+
+#apt for ubuntu and dnf for centos so we will use package and let ubuntu decide what the default package is 
+#check the inventory file to know what the variables(apache_package and php_package) are 

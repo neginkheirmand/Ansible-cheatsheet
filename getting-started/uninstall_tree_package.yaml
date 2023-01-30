@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  tasks: 
+
+    - name: uninstalling tree
+      apt: 
+        name: tree
+        state: absent
+      when: ansible_distribution == "Ubuntu" and ansible_distribution_version == "20.04"

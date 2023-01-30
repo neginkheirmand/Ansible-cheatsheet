@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+  pre_tasks: 
+    - name: update repository index
+      tags: always
+      apt:
+        update_cache: yes   # basically runs apt update before installing something, just to make sure you have the latest version number 
+      when: ansible_distribution == "Ubuntu"  # check the distro using cat /etc/os-release in the client system (capital letters matter) 
+  tasks:
+    - name: installing tree
+      tags: ubuntu,debian,tree
+      apt: 
+        name: tree
+        state: latest
+      when: ansible_distribution in [ "Ubuntu", "Debian" ] # could be one of these many distros  

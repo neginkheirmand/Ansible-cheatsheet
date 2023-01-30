@@ -1,0 +1,49 @@
+#we will make a change in the line number 89 of the file /etc/httpd/conf/httpd.conf and then will restart the service (this is for cent os )
+################################################################ WARNING ################################################################
+#   Be very carefull when using the lineinfile module because this change may happen everytime that the playbook runs, because the playbooks doesn't know that you have already ran this, for example:
+# you may want to add "Aa12345" after the word "hi" the line 5, what happens is Aa12345 will be added the amount of times you run this playbook,
+# cause the playbook cant know that has already be ran before and you will end up with something like this: hi Aa12345Aa12345Aa12345Aa12345
+# but this will not happen for most of the other plays, for example installation ... , since something has already been installed, the play wont change a thing
+
+---
+- hosts: all
+  become: true
+  vars:
+    apache_package: http
+    php_package: php
+  pre_tasks: 
+    - name: install apache and php on CentOS
+      package:
+        name:
+          - "{{apache_package}}"
+          - "{{php_package}}"
+        state: latest
+        update_cache: yes 
+  
+    - name: start the httpd service (CentOS)
+      tags: apache,centos,httpd
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+      when:  ansible_distribution == "CentOS"
+  tasks:
+    - name: change email address in the config file of the httpd service (centos)
+      tags: apache,centos,httpd
+      lineinfile:     # this module allows you to change a line in a file -be carefull when using the lineinfile module-
+        path: /etc/httpd/conf/httpd.conf
+        regexp: '^ServerAdmin'    # a line that starts with this 
+        line: ServerAdmin somebody@somewhere.net  # and what the replacing line should be
+      when:  ansible_distribution == "CentOS"
+      register: httpd   #register the state of the service in a variable called httpd 
+      
+    - name : restart hettpd (centos)
+      tags: apache,centos,httpd
+      service:
+        name: httpd
+        state: restarted
+      when: httpd.changed   #if the state of the variable httpd is changed then run this play
+
+
+#apt for ubuntu and dnf for centos so we will use package and let ubuntu decide what the default package is 
+#check the inventory file to know what the variables(apache_package and php_package) are 
