@@ -1,5 +1,12 @@
 # ansible cheat-sheet:
 
+TODO: 
+
+- [ ] galaxy
+- [ ] meta
+
+
+
 
 
 - [ansible cheat-sheet:](#ansible-cheat-sheet-)
