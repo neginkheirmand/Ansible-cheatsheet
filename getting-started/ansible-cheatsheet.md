@@ -2,11 +2,40 @@
 
 
 
+- [ansible cheat-sheet:](#ansible-cheat-sheet-)
+  * [things you should probably do when installing ansible:](#things-you-should-probably-do-when-installing-ansible-)
+  * [how to install ansible:](#how-to-install-ansible-)
+    + [control node requirements:](#control-node-requirements-)
+    + [Managed node requirements](#managed-node-requirements)
+    + [Installation:](#installation-)
+      - [Using pip](#using-pip)
+      - [Using apt](#using-apt)
+  * [Command(AD HOC) cheat-sheet:](#command-ad-hoc--cheat-sheet-)
+  * [AD HOC vs playbook:](#ad-hoc-vs-playbook-)
+  * [Playbooks](#playbooks)
+    + [Variables](#variables)
+      - [gather_facts variables](#gather-facts-variables)
+      - [self-defined variables:](#self-defined-variables-)
+    + [Tags:](#tags-)
+      - [general and self-defined](#general-and-self-defined)
+    + [copy files to server and changing UFW config:](#copy-files-to-server-and-changing-ufw-config-)
+    + [installing applications using unzip:](#installing-applications-using-unzip-)
+    + [managing services:](#managing-services-)
+      - [starting service:](#starting-service-)
+      - [enabling service(start running after reboot)](#enabling-service-start-running-after-reboot-)
+      - [restarting a service](#restarting-a-service)
+        * [**WARNING: lineinfile package**](#--warning--lineinfile-package--)
+    + [managing users:](#managing-users-)
+      - [creation:](#creation-)
+      - [add sshkey for said user:](#add-sshkey-for-said-user-)
+      - [add sudoers file for said user](#add-sudoers-file-for-said-user)
+    + [Roles](#roles)
+    + [Host variables and handlers](#host-variables-and-handlers)
+    + [Handlers](#handlers)
+    + [Templates](#templates)
+- [playbook examples in order of complexity](#playbook-examples-in-order-of-complexity)
 
 
-
-
-[TOC]
 
 
 
